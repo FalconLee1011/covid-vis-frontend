@@ -1,8 +1,8 @@
 <template>
   <v-container class="fill-height" fluid>
-    <div class="vid-container">
-      <video ref="bg-video" src="@/assets/background-1080.mp4" autoplay muted loop></video>
-    </div>
+    <!-- <div class="vid-container"> -->
+      <!-- <video ref="bg-video" src="@/assets/background-1080.mp4" autoplay muted loop></video> -->
+    <!-- </div> -->
     <v-row class="z1" align="center" justify="center">
       <v-col cols="10" sm="6" md="3">
         <v-expand-transition>

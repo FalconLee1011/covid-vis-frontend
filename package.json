@@ -12,7 +12,7 @@
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "d3": "^6.3.1",
-    "datamaps": "^0.5.9",
+    "@falconlee1011/datamaps": "^0.5.9",
     "topojson": "^3.0.2",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.2",

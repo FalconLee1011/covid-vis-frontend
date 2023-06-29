@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nbrDesktop :nav_items='nav_items' :nav_title="nav_title" v-if="window_width > 600"></nbrDesktop>
+    <nbrDesktop :nav_items='nav_items' :nav_title="nav_title" v-if="windowWidth > 600"></nbrDesktop>
     <nbrMobile :nav_items='nav_items' :nav_title="nav_title" v-else></nbrMobile>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   },
   data: function(){
     return {
-      window_width: 0,
+      windowWidth: 0,
     }
   },
   created() {
@@ -26,12 +26,8 @@ export default {
   },
   methods: {
     resized(){ 
-      this.window_width = window.innerWidth; 
-      console.log(this.window_width);
+      this.windowWidth = window.innerWidth; 
     }
-  },
-  mounted() {
-    console.log("Nav bar mounted!");
   },
 };
 </script>

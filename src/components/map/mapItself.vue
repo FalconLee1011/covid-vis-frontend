@@ -10,9 +10,10 @@
 
 <script>
 /* eslint-disable no-unused-vars */
-import * as d3 from 'd3';
 import 'topojson';
-import * as Datamap from 'datamaps';
+import * as Datamap from '@falconlee1011/datamaps';
+
+import latestData from "@/static-data/latest.json";
 
 const parrotAPI = "/parrot";
 
@@ -40,12 +41,10 @@ export default {
       return `${month}/${days}/${year} ${hours}:${mins}:${secs}`;
     },
     async fetchData(){
-      let data = await this.$axios.get(`${parrotAPI}/get-data`);
-      const d = await this.cleanData(data.data.data);
+      const d = await this.cleanData(latestData.data);
       this.renderMap(d);
       this.updateColorFill(d);
-      data = await this.$axios.get(`${parrotAPI}/get-data-report`);
-      this.lastUpdate = this.epoch2string(parseInt(data.data.timeStampEpoch));
+      this.lastUpdate = this.epoch2string(parseInt(latestData.report.timeStampEpoch));
     },
     updateColorFill(data) {
       var f = {};

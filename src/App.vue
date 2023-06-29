@@ -40,31 +40,7 @@ export default {
       navItems: [
         {title: "overview", link: "/", type: "nav_btn", dropdown: []},
         {title: "map", link: "/map", type: "nav_btn", dropdown: []},  
-        {title: "historical", link: "/historical-data", type: "nav_btn", dropdown: []}, 
-        // {title: "統計", link: "#", type: "nav_btn_drop", dropdown: [
-        //     {title: "你", link: "/you", type:"nav_dropdown_item"}, 
-        //     {title: "世界", link: "/world", type:"nav_dropdown_item"}
-        //   ]
-        // },
-        // {title: "control center", link: "/controlcenter", type: "nav_btn", dropdown: []}, 
-        // {title: "about", link: "/brief", type: "nav_btn", dropdown: []}, 
-        // {title: "xtl.tw", link: "www.xtl.tw", type: "nav_btn", dropdown: []}, 
-      // {title: "貳層 dropdown", link: "#", type: "nav_btn_drop", dropdown: [
-      //     {title: "點開我", link: "#", type:"nav_sub_drop", dropdown: [
-      //         {title: "|ω・`)", link: "#"},
-      //         {title: "|・ω・`)", link: "#"},
-      //         {title: "| (´・ω・`)", link: "#"},
-      //       ]
-      //     },
-      //     {title: "(*´▽`*)", link: "#", type:"nav_dropdown_item"}, 
-      //   ]
-      // },
-      // {title: "壹層 dropdown", link: "#", type: "nav_btn_drop", dropdown: [
-      //     {title: "(*´▽`*)", link: "#", type:"nav_dropdown_item"}, 
-      //     {title: "ヽ(●´∀`●)ﾉ", link: "#", type:"nav_dropdown_item"}
-      //   ]
-      // },
-      // {title: "單壹 link", link: "#", type: "nav_btn", dropdown: []},
+        // {title: "historical", link: "/historical-data", type: "nav_btn", dropdown: []}, 
     ],
     }
   },

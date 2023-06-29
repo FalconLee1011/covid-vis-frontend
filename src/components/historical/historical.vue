@@ -1,5 +1,31 @@
 <template>
   <v-container fluid max-width="90%">
+    <v-dialog
+      v-model="showDialog"
+      scrollable 
+      persistent 
+      :overlay="true"
+      max-width="500px"
+    >
+      <v-card>
+        <v-card-title >
+        </v-card-title>
+        <v-card-text>
+          <v-alert
+            border="left"
+            type="warning"
+            outlined=""
+          >
+            Since this site is now static, and the historic data was depend on an API :(, I am now working on restoring the historical data page
+          </v-alert>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn outlined @click="showDialog = false">OK</v-btn>
+          <v-spacer></v-spacer>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <v-card>
       <v-card-title primary-title> HISTORICAL DATA </v-card-title>
       <v-card-subtitle> 歷史資訊 </v-card-subtitle>
@@ -107,6 +133,7 @@ export default {
   components: { LineChartCard },
   data() {
     return {
+      showDialog: true, 
       datacollection: null, 
       options: {
         responsive: true

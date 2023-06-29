@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import home from '../components/dashboard/home.vue'
-import you from '../components/you/you.vue'
 // import world from '../components/world.vue'
 import map from '../components/map/map.vue'
 // import controlcenter from '../components/controlCenter.vue'
@@ -29,10 +28,6 @@ const routes = [
   {
     path: '/brief',
     component: about
-  },
-  {
-    path: '/you',
-    component: you
   },
   {
     path: '/info',

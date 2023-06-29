@@ -8,11 +8,7 @@
       <v-card-text>
         <v-tabs>
           <v-tab>WORLD</v-tab>
-          <v-tab>TAIWAN</v-tab>
-          <v-tab>3D</v-tab>
           <v-tab-item> <mapItself /> </v-tab-item>
-          <v-tab-item> <mapItselfTW /> </v-tab-item>
-          <v-tab-item> <mapItselfCesium /> </v-tab-item>
         </v-tabs>
       </v-card-text>
     </v-card>
@@ -21,11 +17,9 @@
 
 <script>
 import mapItself from './mapItself';
-import mapItselfTW from './mapItselfTW';
-import mapItselfCesium from './mapItselfCesium';
 
 export default {
-  components: { mapItself, mapItselfTW, mapItselfCesium }, 
+  components: { mapItself }, 
   mounted() {
   },
 }

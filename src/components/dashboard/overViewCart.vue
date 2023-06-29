@@ -78,6 +78,8 @@ import toggleNumPad from "@/components/charts/toggleNumPad";
 import datePadStatic from "@/components/charts/datePad-static";
 // import datePad from "@/components/charts/datePad";
 
+import latestData from "@/static-data/latest.json";
+
 const parrotAPI = "/parrot";
 
 export default {
@@ -110,23 +112,20 @@ export default {
   },
   methods: {
     async fetchData(){
-      let res = await this.$axios.get(`${parrotAPI}/get?country=taiwan`);
-      this.TaiwanConfirmed = res.data.data.Confirmed;
-      this.TaiwanRecovered = res.data.data.Recovered;
-      this.TaiwanDeaths = res.data.data.Deaths;
-      this.TaiwanConfirmedUpdate = res.data.data["New Cases"];
-      // TaiwanRecoveredUpdate
-      this.TaiwanDeathsUpdate = res.data.data["New Deaths"];
-      res = await this.$axios.get(`${parrotAPI}/get-total`);
-      this.WorldConfirmed = res.data.data.Confirmed;
-      this.WorldRecovered = res.data.data.Recovered;
-      this.WorldDeaths = res.data.data.Deaths;
-      this.WorldConfirmedUpdate = res.data.data["New Cases"];
-      // WorldRecoveredUpdate
-      this.WorldDeathsUpdate = res.data.data["New Deaths"];
-      res = await this.$axios.get(`${parrotAPI}/get-data-report`);
-      console.log(res);
-      this.lastUpdate = parseInt(res.data.timeStampEpoch);
+      this.TaiwanConfirmed = latestData.data.TWN.Confirmed;
+      this.TaiwanRecovered = latestData.data.TWN.Recovered;
+      this.TaiwanDeaths = latestData.data.TWN.Deaths;
+      
+      this.WorldConfirmed = latestData.data.Total.Confirmed;
+      this.WorldRecovered = latestData.data.Total.Recovered;
+      this.WorldDeaths = latestData.data.Total.Deaths;
+
+      this.TaiwanConfirmedUpdate = "-";
+      this.TaiwanDeathsUpdate = "-";
+      this.WorldConfirmedUpdate = "-";
+      this.WorldDeathsUpdate = "-";
+      
+      this.lastUpdate = parseInt(latestData.report.timeStampEpoch);
     }
   },
 }

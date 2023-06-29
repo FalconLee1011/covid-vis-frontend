@@ -42,9 +42,6 @@ export default {
       drawer: false,
     }
   },
-  mounted() {
-    console.log("Nav bar mounted!");
-  },
 };
 </script>
 
