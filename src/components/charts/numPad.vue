@@ -1,16 +1,20 @@
 <template>
   <v-card height="10.75rem" elevation="10">
-    <v-card-title>{{title}}</v-card-title>
-    <v-card-subtitle>{{subtitle}}</v-card-subtitle>
+    <v-card-title>{{ title }}</v-card-title>
+    <v-card-subtitle>{{ subtitle }}</v-card-subtitle>
     <v-card-text>
       <div class="info-area">
         <span class="hightlight">
-          <span class="primary--text" id="count" v-if="!countUp">{{(commas) ? data.toLocaleString() : data}}</span>
+          <span class="primary--text" id="count" v-if="!countUp">{{
+            commas ? data.toLocaleString() : data
+          }}</span>
           <!-- <span class="primary--text" id="count" v-if="!countUp">{{(commas) ? data.toLocaleString() : data}}</span> -->
           <!-- <span id="count">{{countedData}}</span> -->
-          <span class="primary--text" v-else>{{(commas) ? countedData.toLocaleString() : countedData}}</span>
+          <span class="primary--text" v-else>{{
+            commas ? countedData.toLocaleString() : countedData
+          }}</span>
         </span>
-        <span class="unit">{{unit}}</span>
+        <span class="unit">{{ unit }}</span>
       </div>
     </v-card-text>
     <v-card-actions />
@@ -18,52 +22,52 @@
 </template>
 
 <style>
-.info-area{
+.info-area {
   margin-top: 1rem;
   text-align: center;
 }
-.hightlight{
+.hightlight {
   color: #50bcff;
   font-size: 400%;
 }
-.unit{
+.unit {
   font-size: 200%;
 }
 </style>
 
 <script>
 export default {
-  props:{
-    title:{
+  props: {
+    title: {
       type: String,
-      default: "title"
+      default: "title",
     },
-    subtitle:{
+    subtitle: {
       type: String,
-      default: "&ensp;"
+      default: "&ensp;",
     },
-    data:{
-      default: 100
+    data: {
+      default: 100,
     },
-    unit:{
-      default: "%"
+    unit: {
+      default: "%",
     },
-    countUp:{
+    countUp: {
       default: true,
     },
-    commas:{
+    commas: {
       default: true,
     },
-    subData:{
+    subData: {
       default: undefined,
-    }
+    },
   },
-  data(){
-    return{
+  data() {
+    return {
       countedData: 0,
-    }
+    };
   },
-  mounted() { 
+  mounted() {
     this.animateValue(0, this.data, 600);
   },
   methods: {
@@ -79,7 +83,7 @@ export default {
         }
       };
       window.requestAnimationFrame(step);
-    }
+    },
   },
-}
+};
 </script>

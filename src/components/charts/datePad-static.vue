@@ -1,15 +1,21 @@
 <template>
   <v-card height="10.75rem" elevation="10">
-    <v-card-title>{{title}}</v-card-title>
-    <v-card-subtitle>{{subtitle}}</v-card-subtitle>
+    <v-card-title>{{ title }}</v-card-title>
+    <v-card-subtitle>{{ subtitle }}</v-card-subtitle>
     <v-card-text>
       <div class="info-area">
-        <span class="hightlight primary--text">{{year}}</span><span class="unit">年</span>
-        <span class="hightlight primary--text">{{month}}</span><span class="unit">月</span>
-        <span class="hightlight primary--text">{{days}}</span><span class="unit">日</span>
-        <span class="hightlight primary--text">{{hours}}</span><span class="unit">時</span>
-        <span class="hightlight primary--text">{{mins}}</span><span class="unit">分</span>
-        <span class="hightlight primary--text">{{secs}}</span><span class="unit">秒</span>
+        <span class="hightlight primary--text">{{ year }}</span
+        ><span class="unit">年</span>
+        <span class="hightlight primary--text">{{ month }}</span
+        ><span class="unit">月</span>
+        <span class="hightlight primary--text">{{ days }}</span
+        ><span class="unit">日</span>
+        <span class="hightlight primary--text">{{ hours }}</span
+        ><span class="unit">時</span>
+        <span class="hightlight primary--text">{{ mins }}</span
+        ><span class="unit">分</span>
+        <span class="hightlight primary--text">{{ secs }}</span
+        ><span class="unit">秒</span>
       </div>
     </v-card-text>
     <v-card-actions />
@@ -17,72 +23,72 @@
 </template>
 
 <style>
-.info-area{
+.info-area {
   margin-top: 1rem;
   text-align: center;
 }
-.hightlight{
+.hightlight {
   /* color: #50bcff; */
   font-size: 400%;
 }
-.hightlight-small{
+.hightlight-small {
   /* color: #50bcff; */
   font-size: 280%;
 }
-.unit{
+.unit {
   font-size: 200%;
 }
-.unit-small{
+.unit-small {
   font-size: 110%;
 }
 </style>
 
 <script>
 export default {
-  props:{
-    title:{
+  props: {
+    title: {
       type: String,
-      default: "Title"
+      default: "Title",
     },
-    subtitle:{
+    subtitle: {
       type: String,
-      default: "date card"
+      default: "date card",
     },
-    data:{
-      default: 1610831300
+    data: {
+      default: 1610831300,
     },
-    unit:{
-      default: "%"
+    unit: {
+      default: "%",
     },
-    countUp:{
+    countUp: {
       default: true,
     },
-    clickable:{
+    clickable: {
       default: true,
     },
-    modeSelect:{
-      default: 'countUp',
-    }
+    modeSelect: {
+      default: "countUp",
+    },
   },
-  data(){
-    return{
+  data() {
+    return {
       countedData: 0,
-      year: 0, 
-      month: 0, 
-      days: 0, 
-      hours: 0, 
-      mins: 0, 
-      secs: 0, 
-      mode: 'countUp', 
+      year: 0,
+      month: 0,
+      days: 0,
+      hours: 0,
+      mins: 0,
+      secs: 0,
+      mode: "countUp",
       timeinterval: undefined,
-      modes: ['countUp', 'static'],
-    }
+      modes: ["countUp", "static"],
+    };
   },
-  mounted() { 
+  mounted() {
     this.convert(this.data);
   },
   methods: {
-    convert(epoch){
+    convert(epoch) {
       console.log(epoch);
       let date = new Date(0);
       date.setUTCSeconds(epoch);
@@ -95,5 +101,5 @@ export default {
       this.secs = ("0" + date.getSeconds()).slice(-2);
     },
   },
-}
+};
 </script>

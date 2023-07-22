@@ -47,9 +47,9 @@ export default {
       default: undefined,
     },
     config: {
-      type: Object, 
-      default: () => {}
-    }
+      type: Object,
+      default: () => {},
+    },
   },
   data() {
     return {
@@ -59,21 +59,21 @@ export default {
   },
   mounted() {},
   methods: {
-    render(data, options){
+    render(data, options) {
       this.hasData = true;
       this.chart = new Chart(document.getElementById(this.name), options);
-    }, 
-    update(data){
+    },
+    update(data) {
       this.chart.data = data;
       this.chart.update();
-    }, 
-    clear(){
+    },
+    clear() {
       this.hasData = false;
-      const canvas = document.getElementById(this.name)
-      const context = canvas.getContext('2d');
+      const canvas = document.getElementById(this.name);
+      const context = canvas.getContext("2d");
       context.clearRect(0, 0, canvas.width, canvas.height);
       this.chart = undefined;
-    }
+    },
   },
 };
 </script>

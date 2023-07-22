@@ -1,18 +1,9 @@
 <template>
-  <v-menu
-      bottom
-      offset-y
-  >
-    <template v-slot:activator="{on, attrs}">
-      <v-btn
-        dark
-        v-bind="attrs"
-        v-on="on"
-      >
-      {{ title }}<v-icon
-          color="grey lighten-1"
-          dense
-        >mdi-chevron-right</v-icon>
+  <v-menu bottom offset-y>
+    <template v-slot:activator="{ on, attrs }">
+      <v-btn dark v-bind="attrs" v-on="on">
+        {{ title
+        }}<v-icon color="grey lighten-1" dense>mdi-chevron-right</v-icon>
       </v-btn>
     </template>
     <v-list>
@@ -24,7 +15,7 @@
         :dropdown="drop.dropdown"
         :link="drop.link"
       >
-      {{drop.title}}
+        {{ drop.title }}
       </div>
     </v-list>
   </v-menu>
@@ -41,7 +32,9 @@ export default {
     dropdown: Array,
   },
   methods: {
-    jump2(link){ location.href = link; }
+    jump2(link) {
+      location.href = link;
+    },
   },
 };
 </script>

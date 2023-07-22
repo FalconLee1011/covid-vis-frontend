@@ -2,7 +2,11 @@
   <v-app>
     <v-main>
       <v-expand-transition>
-        <xnav v-if="!$route.meta.hideNav" :nav_items=navItems :nav_title=navTitle />
+        <xnav
+          v-if="!$route.meta.hideNav"
+          :nav_items="navItems"
+          :nav_title="navTitle"
+        />
       </v-expand-transition>
       <keep-alive>
         <transition name="fade" mode="out-in">
@@ -14,18 +18,19 @@
 </template>
 
 <style>
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: 0.4s;
 }
 .fade-enter {
   opacity: 0;
   /* transform: translateX(-20vh); */
-  transform: scale(0.95)
+  transform: scale(0.95);
 }
 .fade-leave-to {
   opacity: 0;
   /* transform: translateX(20vh); */
-  transform: scale(0.95)
+  transform: scale(0.95);
 }
 </style>
 
@@ -36,23 +41,28 @@ export default {
   components: { xnav },
   data() {
     return {
-      navTitle: "COVID CIC | 武漢肺炎戰情中心 ", 
+      navTitle: "COVID-19 CIC",
       navItems: [
-        {title: "overview", link: "/", type: "nav_btn", dropdown: []},
-        {title: "map", link: "/map", type: "nav_btn", dropdown: []},  
-        // {title: "historical", link: "/historical-data", type: "nav_btn", dropdown: []}, 
-    ],
-    }
+        { title: "overview", link: "/", type: "nav_btn", dropdown: [] },
+        { title: "map", link: "/map", type: "nav_btn", dropdown: [] },
+        {
+          title: "historical",
+          link: "/historical-data",
+          type: "nav_btn",
+          dropdown: [],
+        },
+      ],
+    };
   },
   mounted() {
     console.log(this.$route);
   },
-}
+};
 </script>
 
 <style>
-  *{
-    font-family: 'PingFang TC', 'Major Mono Display', monospace;
-    font-weight: 400 !important;
-  }
+* {
+  font-family: "PingFang TC", "Major Mono Display", monospace;
+  font-weight: 400 !important;
+}
 </style>

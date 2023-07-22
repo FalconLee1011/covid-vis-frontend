@@ -1,9 +1,7 @@
 <template>
-  <v-list-item
-    :to=link
-  >
+  <v-list-item :to="link">
     <v-list-item-title>
-      {{title}}
+      {{ title }}
     </v-list-item-title>
   </v-list-item>
 </template>
@@ -15,7 +13,9 @@ export default {
     link: String,
   },
   methods: {
-    jump2(link){ this.$router.push(link); }
+    jump2(link) {
+      this.$router.push(link);
+    },
   },
 };
 </script>

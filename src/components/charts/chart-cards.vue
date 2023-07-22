@@ -62,7 +62,7 @@ export default {
   },
   mounted() {},
   methods: {
-    _composeData: function(data, colorSettings) {
+    _composeData: function (data, colorSettings) {
       let dataset = [];
       if (this.hasMultipleDatasets) {
         for (const key in data) {
@@ -107,12 +107,12 @@ export default {
       }
       return dataset;
     },
-    _getKeys: function(data) {
+    _getKeys: function (data) {
       if (this.keys != undefined) return data[this.keys];
       else if (this.hasMultipleDatasets) Object.keys(data[0]);
       else return Object.keys(data);
     },
-    render: function(data, colorSettings) {
+    render: function (data, colorSettings) {
       this.hasData = true;
       if (colorSettings == {} || colorSettings == undefined) {
         colorSettings = {
@@ -134,7 +134,7 @@ export default {
         data: {
           label: "數量",
           labels: _keys,
-          datasets: {..._data, pointHitRadius: 1000,},
+          datasets: { ..._data, pointHitRadius: 1000 },
         },
         options: {
           responsive: true,

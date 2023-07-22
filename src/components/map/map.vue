@@ -1,9 +1,6 @@
 <template>
-  <v-container
-    fluid
-    max-width=90%
-  >
-    <v-card height=90vh>
+  <v-container fluid max-width="90%">
+    <v-card height="90vh">
       <v-card-title primary-title>The Map</v-card-title>
       <v-card-text>
         <v-tabs>
@@ -16,11 +13,10 @@
 </template>
 
 <script>
-import mapItself from './mapItself';
+import mapItself from "./mapItself";
 
 export default {
-  components: { mapItself }, 
-  mounted() {
-  },
-}
+  components: { mapItself },
+  mounted() {},
+};
 </script>
