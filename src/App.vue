@@ -18,6 +18,9 @@
 </template>
 
 <style>
+body{
+  background-color: #121212;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: 0.4s;

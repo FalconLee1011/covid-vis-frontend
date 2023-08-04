@@ -1,6 +1,6 @@
 <template>
   <v-container fluid max-width="90%">
-    <v-card height="90vh">
+    <v-card>
       <v-card-title primary-title>The Map</v-card-title>
       <v-card-text>
         <v-tabs>

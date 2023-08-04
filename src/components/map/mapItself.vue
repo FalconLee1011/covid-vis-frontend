@@ -3,6 +3,13 @@
     <v-overlay v-model="ready">
       <v-progress-circular indeterminate color="primary"></v-progress-circular>
     </v-overlay>
+    <v-overlay opacity="0.8" style="text-align: center;" v-model="widthTooSmall">
+      <v-icon x-large="">mdi-phone-rotate-landscape</v-icon>
+      <div class="rotate-tip">
+        Rotate your screen to landscape for a better experience !
+      </div>
+      <v-btn color="success" outlined @click="widthTooSmall = false">OK</v-btn>
+    </v-overlay>
     <div
       id="map"
       style="position: relative; width: 100%; height: 75vh; overflow: scroll"
@@ -24,13 +31,29 @@ export default {
     return {
       map: undefined,
       ready: true,
+      data: undefined, 
       lastUpdate: 0,
+      windowWidth: window.innerWidth, 
+      windowHeight: window.innerHeight, 
+      widthTooSmall: false,
     };
   },
   mounted() {
+    this.checkWindowSize();
     this.fetchData();
+    window.addEventListener('resize', () => {
+      this.checkWindowSize();
+    })
   },
   methods: {
+    checkWindowSize(){
+      this.windowWidth = window.innerWidth;
+      this.windowHeight = window.innerHeight;
+      this.widthTooSmall = this.windowHeight > this.windowWidth;
+      document.getElementById("map").innerHTML = "";
+      this.renderMap(this.data);
+      this.updateColorFill(this.data);
+    }, 
     epoch2string(epoch) {
       let date = new Date(0);
       date.setUTCSeconds(epoch);
@@ -44,9 +67,9 @@ export default {
     },
     async fetchData() {
       const latestData = await apis.getLatestData();
-      const d = await this.cleanData(latestData.data);
-      this.renderMap(d);
-      this.updateColorFill(d);
+      this.data = await this.cleanData(latestData.data);
+      this.renderMap(this.data);
+      this.updateColorFill(this.data);
       this.lastUpdate = this.epoch2string(
         parseInt(latestData.report.timeStampEpoch),
       );
@@ -95,7 +118,6 @@ export default {
         element: document.getElementById("map"),
         // projection: 'mercator',
         data: data,
-
         geographyConfig: {
           highlightBorderColor: "#fff",
           highlightFillColor: "#a55",
@@ -138,7 +160,7 @@ export default {
           darkZone: "#f00",
         },
       });
-      this.ready = !this.ready;
+      this.ready = false;
     },
   },
 };
@@ -156,5 +178,8 @@ export default {
   /* margin-left: -8rem; */
   position: relative;
   margin: auto;
+}
+.rotate-tip{
+  padding: 1rem 1rem;
 }
 </style>
