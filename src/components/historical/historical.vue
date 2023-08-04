@@ -130,10 +130,10 @@ export default {
     country() {
       this.renderChart(true);
     },
-    startDate(v) {
+    startDate() {
       this.renderChart(true);
     },
-    endDate(v) {
+    endDate() {
       this.renderChart(true);
     },
   },

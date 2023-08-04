@@ -33,6 +33,14 @@
 .unit {
   font-size: 200%;
 }
+@media only screen and (max-width: 768px) {
+  .hightlight {
+    font-size: 10vw !important;
+  }
+  .unit {
+    font-size: 5vw !important;
+  }
+}
 </style>
 
 <script>
