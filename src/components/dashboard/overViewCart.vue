@@ -1,8 +1,8 @@
 <template>
-  <v-card v-if="ready">
-    <v-overlay v-if="!ready">
+  <v-card>
+    <!-- <v-overlay>
       <v-progress-circular indeterminate color="primary"></v-progress-circular>
-    </v-overlay>
+    </v-overlay> -->
     <v-card-subtitle> WORLD STATISTICS </v-card-subtitle>
     <v-card-text>
       <v-row>
@@ -120,7 +120,6 @@ export default {
     };
   },
   async created() {
-    await this.fetchData();
     await this.fetchData();
     this.ready = true;
   },

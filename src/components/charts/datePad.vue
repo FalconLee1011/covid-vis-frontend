@@ -124,6 +124,11 @@ export default {
       }, 1000);
     }
   },
+  watch: {
+    data(v){
+      this.convert(v);
+    }
+  },
   methods: {
     switchMode() {
       if (!this.clickable) return;

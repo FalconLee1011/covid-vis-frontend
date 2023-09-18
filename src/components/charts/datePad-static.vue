@@ -87,12 +87,16 @@ export default {
   mounted() {
     this.convert(this.data);
   },
+  watch: {
+    data(v){
+      this.convert(v);
+    }
+  },
   methods: {
     convert(epoch) {
       console.log(epoch);
       let date = new Date(0);
       date.setUTCSeconds(epoch);
-      console.log(date);
       this.year = date.getFullYear();
       this.month = ("0" + parseInt(date.getMonth() + 1)).slice(-2);
       this.days = ("0" + date.getDate()).slice(-2);

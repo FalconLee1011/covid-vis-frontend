@@ -78,6 +78,11 @@ export default {
   mounted() {
     this.animateValue(0, this.data, 600);
   },
+  watch: {
+    data(v){
+      this.animateValue(0, v, 600);
+    }
+  },
   methods: {
     animateValue(start, end, duration) {
       let startTimestamp = null;
