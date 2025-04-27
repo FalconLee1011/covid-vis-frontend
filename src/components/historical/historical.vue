@@ -4,7 +4,7 @@
       <v-card-title primary-title> HISTORICAL DATA </v-card-title>
       <v-card-subtitle> 歷史資訊 </v-card-subtitle>
       <v-card-text class="mt-4">
-        <v-row>
+        <!-- <v-row>
           <v-col>
             <v-alert type="warning" outlined>
               Please note that due to a blackout back in June, 2023 in the old
@@ -12,7 +12,7 @@
               time.
             </v-alert>
           </v-col>
-        </v-row>
+        </v-row> -->
         <v-row>
           <v-col cols="3">
             <v-select
@@ -46,7 +46,7 @@
               <v-date-picker
                 v-model="startDate"
                 min="2021-01-20"
-                :max="today"
+                max="2023-09-30"
                 @input="startDateMenu = false"
               ></v-date-picker>
             </v-menu>
@@ -72,7 +72,7 @@
               <v-date-picker
                 v-model="endDate"
                 min="2021-01-20"
-                :max="today"
+                max="2023-09-30"
                 @input="endDateMenu = false"
               ></v-date-picker>
             </v-menu>
@@ -108,8 +108,7 @@ export default {
       startDateMenu: false,
       startDate: "2021-01-20",
       endDateMenu: false,
-      today: "",
-      endDate: "",
+      endDate: "2023-09-30",
       countries: [
         { name: "Taiwan | 臺灣", value: "TWN" },
         { name: "Japan | 日本", value: "JPN" },
@@ -123,8 +122,6 @@ export default {
   },
   created() {
     this.renderChart();
-    this.today = new Date().toISOString().slice(0, 10);
-    this.endDate = this.today;
   },
   watch: {
     country() {

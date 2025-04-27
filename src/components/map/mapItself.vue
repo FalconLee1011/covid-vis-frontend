@@ -15,7 +15,7 @@
       style="position: relative; width: 100%; height: 75vh; overflow: scroll"
     />
     <div class="caption disabled text--disabled">
-      last update: {{ lastUpdate }}
+      last update: 2023-09-30
     </div>
   </v-card>
 </template>
@@ -70,9 +70,9 @@ export default {
       this.data = await this.cleanData(latestData.data);
       this.renderMap(this.data);
       this.updateColorFill(this.data);
-      this.lastUpdate = this.epoch2string(
-        parseInt(latestData.report.timeStampEpoch),
-      );
+      // this.lastUpdate = this.epoch2string(
+      //   parseInt(latestData.report.timeStampEpoch),
+      // );
     },
     updateColorFill(data) {
       var f = {};

@@ -8,6 +8,11 @@
           :nav_title="navTitle"
         />
       </v-expand-transition>
+      <v-alert icon=mdi-archive-star-outline type="warning" class="mx-4 my-6" outlined>
+        This project is now EoL and is in archive mode, since the main datasource has stopped updating.<br>
+        The data will not be updated.<br>
+        But a rewind feature is coming on the way<br>
+      </v-alert>
       <keep-alive>
         <transition name="fade" mode="out-in">
           <router-view ref="view" />

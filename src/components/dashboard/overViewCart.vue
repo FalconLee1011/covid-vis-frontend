@@ -116,7 +116,7 @@ export default {
       WorldDeathsUpdate: 0,
 
       ready: false,
-      lastUpdate: 0,
+      lastUpdate: 1696032000,
     };
   },
   async created() {
@@ -140,7 +140,7 @@ export default {
       this.WorldConfirmedUpdate = "-";
       this.WorldDeathsUpdate = "-";
 
-      this.lastUpdate = parseInt(latestData.report.timeStampEpoch);
+      // this.lastUpdate = parseInt(latestData.report.timeStampEpoch);
     },
   },
 };
